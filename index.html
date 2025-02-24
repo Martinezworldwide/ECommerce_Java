@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Run ECommerce App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run ECommerce Java App</title>
     <script src="https://cjrtnc.leaningtech.com/3.1/cj3loader.js"></script>
 </head>
 <body>
     <h1>Running ECommerce Java App in Browser</h1>
+    <div id="cheerpj-container"></div>
+
     <script>
         (async function () {
-            await cheerpjInit();
-            cheerpjCreateDisplay(800, 600);  // Adjust the display size as needed
-            await cheerpjRunJar("/app/Main.jar");
+            try {
+                // Initialize CheerpJ
+                await cheerpjInit();
+                
+                // Create display area for Java application
+                cheerpjCreateDisplay(800, 600); // Adjust size as needed
+                
+                // Run the Java application specifying the main class
+                await cheerpjRunMain("com.ecommerce.main.Main", "/app/Main.jar");
+                
+            } catch (error) {
+                console.error("Error running Java application:", error);
+            }
         })();
     </script>
 </body>
