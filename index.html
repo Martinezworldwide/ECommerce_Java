@@ -8,19 +8,18 @@
 </head>
 <body>
     <h1>Running ECommerce Java App in Browser</h1>
-    
+
     <script>
         (async function () {
             try {
-                // Initialize CheerpJ runtime
+                // Initialize CheerpJ
                 await cheerpjInit();
-                
-                // Create a GUI display environment
-                cheerpjCreateDisplay(1024, 768);  // Adjust size if needed
-                
-                // Run the Java application (Change to your main GUI class)
-                await cheerpjRunMain("com.ecommerce.main.Main", "/Main.jar");
-                
+
+                // Create GUI display
+                cheerpjCreateDisplay(1024, 768);
+
+                // Run the Java application
+                await cheerpjRunMain("com.ecommerce.main.EcommerceGUI", "/Main.jar");
             } catch (error) {
                 console.error("Error running Java GUI application:", error);
             }
@@ -28,4 +27,5 @@
     </script>
 </body>
 </html>
+
 
