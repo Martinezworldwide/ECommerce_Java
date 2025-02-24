@@ -1,21 +1,29 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>CheerpJ test</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce App</title>
     <script src="https://cjrtnc.leaningtech.com/3.1/cj3loader.js"></script>
-  </head>
-  <body>
-    <h1>Running ECommerce Java App in Browser</h1>
+</head>
+<body>
+    <h1>E-Commerce Application</h1>
+    <p>Loading the Java application...</p>
+
     <script>
-      (async function () {
-        await cheerpjInit();
-        cheerpjCreateDisplay(800, 600);
-        await cheerpjRunJar("/app/Main.jar");
-      })();
+        (async function () {
+            await cheerpjInit();
+            cheerpjCreateDisplay(800, 600);
+            
+            // Correctly reference the JAR file using the GitHub Pages repo path
+            cheerpjRunMain(
+                "com.ecommerce.main.Main",
+                "/app/ECommerce_Java/Main.jar"
+            );
+        })();
     </script>
-  </body>
+</body>
 </html>
 
 
